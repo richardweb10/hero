@@ -11,6 +11,7 @@ jobs:
       - image: circleci/node:8-browsers
     steps:
       - checkout
+      - run: npm install
       - run: npm run test -- --progress=false --watch=false --browsers=ChromeHeadlessCI
   deploy:
     docker:
