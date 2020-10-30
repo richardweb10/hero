@@ -2,20 +2,20 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:12-browsers
     steps:
       - checkout
       - run: npm install
   test:
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:12-browsers
     steps:
       - checkout
       - run: npm install
       - run: npm run test -- --progress=false --watch=false --browsers=ChromeHeadlessCI
   deploy:
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:12-browsers
     steps:
       - checkout
       - run: echo "this is the deploy job"
